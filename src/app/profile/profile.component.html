@@ -1,0 +1,873 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="mb-2">
+                <h1>{{data.emp_name}}</h1>
+                <!-- <div class="text-zero top-right-button-container">
+                    <button type="button" class="btn btn-lg btn-outline-primary dropdown-toggle dropdown-toggle-split top-right-button top-right-button-single" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ACTIONS
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </div>
+                <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb pt-0">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Library</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    </ol>
+                </nav> -->
+            </div>
+
+
+            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active show" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                        aria-controls="first" aria-selected="true">الملف الشخصي</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="second-tab" data-toggle="tab" href="#second" role="tab"
+                        aria-controls="second" aria-selected="false">مستندات</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active show" id="first" role="tabpanel" aria-labelledby="first-tab">
+                    <div class="row">
+                        <div class="col-12 col-lg-5 col-xl-4 col-left">
+                            <div class="card mb-4">
+                                <div class="position-absolute card-top-buttons">
+                                    <button class="btn btn-outline-white icon-button " data-toggle="modal"
+                                        data-target="#rightModal">
+                                        <i class="iconsminds-pen-2"></i>
+                                    </button>
+
+                                </div>
+                                <img [src]="data.image" alt="Detail Picture" class="card-img-top">
+
+                                <div class="card-body">
+                                    <p class="mb-3">
+                                        الوظيفة: {{data.emp_job}}
+
+                                    </p>
+                                    <p class="mb-3">
+                                        البريد الإلكتروني:{{data.email}}
+                                    </p>
+                                    <p class="mb-3">
+                                        عنوان:{{data.emp_address}}
+
+                                    </p>
+                                    <p class="mb-3">
+                                        تاريخ الميلاد:{{data.emp_birth}}
+
+                                    </p>
+                                    <p class="mb-3">
+                                        الحالة العسكرية:{{data.emp_militry}}
+
+                                    </p>
+                                    <p class="mb-3">
+                                        تاريخ البدء:{{data.emp_start}}
+
+                                    </p>
+                                    <p class="mb-3">
+                                        التعليم:{{data.emp_edu}}
+
+                                    </p>
+
+
+                                    <p class="text-muted text-small mb-2">مكان الموظف</p>
+                                    <p class="mb-3">قسم : {{data.dep_name}}</p>
+                                    <p class="mb-3">مكتب : {{data.job_off}}</p>
+
+                                    <!-- <p class="text-muted text-small mb-2">Responsibilities</p>
+                                    <p class="mb-3">
+                                        <a href="#">
+                                            <span class="badge badge-pill badge-outline-theme-2 mb-1">FRONTEND</span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="badge badge-pill badge-outline-theme-2 mb-1">JAVASCRIPT</span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="badge badge-pill badge-outline-theme-2 mb-1">SECURITY</span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="badge badge-pill badge-outline-theme-2 mb-1">DESIGN</span>
+                                        </a>
+                                    </p>
+                                    <p class="text-muted text-small mb-2">Contact</p>
+                                    <div class="social-icons">
+                                        <ul class="list-unstyled list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="simple-icon-social-facebook"></i></a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="simple-icon-social-twitter"></i></a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="simple-icon-social-instagram"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                    <button type="button" class="btn btn-primary btn-lg top-right-button"
+                                        data-toggle="modal" data-target="#editModal">تعديل</button>
+                                </div>
+                            </div>
+                            <div class="card mb-4 d-none d-lg-block">
+                                <div class="position-absolute card-top-buttons">
+                                    <button class="btn btn-header-light icon-button">
+                                        <i class="simple-icon-refresh"></i>
+                                    </button>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Recent Posts</h5>
+                                    <!-- <div>
+                                        <div class="d-flex flex-row mb-3">
+                                            <a class="d-block position-relative" href="#">
+                                                <img src="img/marble-cake-thumb.jpg" alt="Marble Cake" class="list-thumbnail border-0">
+                                                <span class="badge badge-pill badge-theme-2 position-absolute badge-top-right">NEW</span>
+                                            </a>
+                                            <div class="pl-3 pt-2 pr-2 pb-2">
+                                                <a href="#">
+                                                    <p class="list-item-heading">Progressively Maintain
+                                                        Extensive Infomediaries</p>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row mb-3">
+                                            <a class="d-block position-relative" href="#">
+                                                <img src="img/fruitcake-thumb.jpg" alt="Fruitcake" class="list-thumbnail border-0">
+                                            </a>
+                                            <div class="pl-3 pt-2 pr-2 pb-2">
+                                                <a href="#">
+                                                    <p class="list-item-heading">Assertively Iterate Resource
+                                                        Maximizing</p>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row mb-3">
+                                            <a class="d-block position-relative" href="#">
+                                                <img src="img/chocolate-cake-thumb.jpg" alt="Chocolate Cake" class="list-thumbnail border-0">
+                                            </a>
+                                            <div class="pl-3 pt-2 pr-2 pb-2">
+                                                <a href="#">
+                                                    <p class="list-item-heading">Podcasting Operational Change
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row">
+                                            <a class="d-block position-relative" href="#">
+                                                <img src="img/fat-rascal-thumb.jpg" alt="Fat Rascal" class="list-thumbnail border-0">
+                                            </a>
+                                            <div class="pl-3 pt-2 pr-2 pb-2">
+                                                <a href="#">
+                                                    <p class="list-item-heading">Manufactured Products</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- <div class="card mb-4">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">Order Status</h6>
+                                    <div role="progressbar" class="progress-bar-circle position-relative" data-color="#922c88" data-trailcolor="#d7d7d7" aria-valuemax="100" aria-valuenow="40" data-show-percent="true">
+                                    <svg viewBox="0 0 100 100" style="display: block; width: 100%;"><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#d7d7d7" stroke-width="4" fill-opacity="0"></path><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#922c88" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 180.981;"></path></svg><div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(146, 44, 136);">40%</div></div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">Bake Progress</h6>
+                                    <div role="progressbar" class="progress-bar-circle position-relative" data-color="#922c88" data-trailcolor="#d7d7d7" aria-valuemax="100" aria-valuenow="60" data-show-percent="true">
+                                    <svg viewBox="0 0 100 100" style="display: block; width: 100%;"><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#d7d7d7" stroke-width="4" fill-opacity="0"></path><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#922c88" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 120.654;"></path></svg><div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(146, 44, 136);">60%</div></div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-12 col-lg-7 col-xl-8 col-right">
+                            <!-- <div class="row listing-card-container">
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/marble-cake-thumb.jpg" alt="Card image cap"></a>
+                                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Podcasting Operational Change...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    18.08.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/goose-breast-thumb.jpg" alt="Card image cap"></a>
+                                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                                            <span class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Power of Choice is Untrammelled
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    14.06.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/chocolate-cake-thumb.jpg" alt="Card image cap"></a>
+                                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Progressively Maintain Extensive
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    24.05.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/souffle-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Assertively Iterate Infomediaries
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    23.05.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/cremeschnitte-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Progressively Maintain Extensive...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    19.04.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/napoleonshat-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Podcasting Operational...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    01.03.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/tea-loaf-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Podcasting Operational Change
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    23.05.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/merveilleux-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Objectively Innovate Empowered...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    19.04.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/financier-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Empowered Manufactured...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    01.03.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/fat-rascal-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Podcasting Operational Change...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    18.08.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/petit-gateau-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Resource Maximizing Bandwidth
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    14.06.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/souffle-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Green Space Global Policymaker
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    24.05.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/souffle-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">
+                                                    Assertively Iterate Infomediaries
+                                                    </div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    23.05.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/cremeschnitte-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Progressively Maintain Extensive...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    19.04.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4">
+                                    <div class="card">
+                                        <div class="position-relative">
+                                            <a href="Pages.Details.html"><img class="card-img-top" src="img/salzburger-nockerl-thumb.jpg" alt="Card image cap"></a>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="Pages.Details.html">
+                                                <h6 class="mb-3 listing-heading ellipsis"><div style="margin: 0px; padding: 0px; border: 0px;">Podcasting Operational...</div></h6>
+                                            </a>
+                                            <footer>
+                                                <p class="text-muted text-small mb-0 font-weight-light">
+                                                    01.03.2018</p>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" data-toggle="modal" data-target="#documentModal">
+
+                                    <img alt="Profile" src="../../assets/img/pdf-upload.png"
+                                        class="img-thumbnail border-0  m-4 list-thumbnail align-self-center">
+
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div
+                                        class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a>
+                                                <p class="list-item-heading mb-1 truncate">شهادة عسكرية</p>
+                                            </a>
+                                            <!-- <p class="mb-2 text-muted text-small">Head Developer</p> -->
+                                            <button class="btn btn-success mb-1" data-toggle="modal"
+                                                data-target="#previewModal">
+                                                عرض </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" href="#">
+                                    <img alt="Profile" src="img/profile-pic-l-2.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a href="#">
+                                                <p class="list-item-heading mb-1 truncate">Kathryn Mengel</p>
+                                            </a>
+                                            <p class="mb-2 text-muted text-small">Art Director</p>
+                                            <button type="button" class="btn btn-xs btn-outline-primary ">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" href="#">
+                                    <img alt="Profile" src="img/profile-pic-l-3.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a href="#">
+                                                <p class="list-item-heading mb-1 truncate">Laree Munsch</p>
+                                            </a>
+                                            <p class="mb-2 text-muted text-small">Lead Programmer</p>
+                                            <button type="button" class="btn btn-xs btn-outline-primary ">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" href="#">
+                                    <img alt="Profile" src="img/profile-pic-l-4.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a href="#">
+                                                <p class="list-item-heading mb-1 truncate">Esperanza Lodge</p>
+                                            </a>
+                                            <p class="mb-2 text-muted text-small">Director</p>
+                                            <button type="button" class="btn btn-xs btn-outline-primary ">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" href="#">
+                                    <img alt="Profile" src="img/profile-pic-l-5.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a href="#">
+                                                <p class="list-item-heading mb-1 truncate">Mimi Carreira</p>
+                                            </a>
+                                            <p class="mb-2 text-muted text-small">Photographer</p>
+                                            <button type="button" class="btn btn-xs btn-outline-primary ">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" href="#">
+                                    <img alt="Profile" src="img/profile-pic-l-6.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a href="#">
+                                                <p class="list-item-heading mb-1 truncate">Rasheeda Vaquera</p>
+                                            </a>
+                                            <p class="mb-2 text-muted text-small">Account</p>
+                                            <button type="button" class="btn btn-xs btn-outline-primary ">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card d-flex flex-row mb-4">
+                                <a class="d-flex" href="#">
+                                    <img alt="Profile" src="img/profile-pic-l-7.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                                </a>
+                                <div class=" d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                                        <div class="min-width-zero">
+                                            <a href="#">
+                                                <p class="list-item-heading mb-1 truncate">Sarah Kortney</p>
+                                            </a>
+                                            <p class="mb-2 text-muted text-small">Executive Director</p>
+                                            <button type="button" class="btn btn-xs btn-outline-primary ">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-right" id="rightModal" tabindex="-1" role="dialog" aria-labelledby="rightModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rightModalLabel">صورة موظف </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+                    <div class="text-center">
+                        <img [src]="imgSrc" width="250px" height="255px" (click)="fileUploader.click()">
+                    </div>
+                    <div class="form-group">
+                        <label>حدد ملف للتحميل</label>
+                        <input type="file" accept="image/*" class="form-control" #fileUploader
+                            formControlName="imageUrl" (change)="showPreview($event)">
+                        <!-- <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">هذه
+                            الخانة مطلوبه.
+                        </div> -->
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button type="submit" class="btn btn-success btn-block float-right">حفظ</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                            </div> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-right" id="editModal" tabindex="-1" role="dialog" aria-labelledby="rightModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rightModalLabel">تعديل موظف </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>سيؤدي تقديم النموذج أدناه إلى إضافة البيانات إلى البيانات وستكون الصفوف محدث.
+                </p>
+                <form>
+                    <div class="form-group position-relative">
+                        <label>البريد الإلكتروني للموظف</label>
+                        <input type="text" name="email" [(ngModel)]="data.email" class="form-control error">
+                        <!-- <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.email.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div> -->
+                    </div>
+                    <div class="form-group position-relative">
+                        <label>اسم الموظف</label>
+                        <input type="text" name="emp_name" class="form-control error" [(ngModel)]="data.emp_name">
+                        <!-- <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_name.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div> -->
+                    </div>
+                    <div class="form-group position-relative">
+                        <label>هاتف الموظف</label>
+                        <input type="text" name="emp_phone" class="form-control error" [(ngModel)]="data.emp_phone">
+                        <!-- <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_phone.errors?.required"> هذه الخانة
+                                            مطلوبه.
+                                        </div> -->
+                    </div>
+                    <!-- <div class="form-group position-relative">
+                                        <label>وظيفة الموظف</label>
+                                        <select name="emp_job" class="form-control error" [(ngModel)]="data.emp_job">
+                                            <option *ngFor="let item of jobArray" value="{{item.job_name}}">
+                                                {{item.job_name}}</option>
+                                        </select>
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_job.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <!-- <div class="form-group position-relative">
+                                        <label>مكتب الوظيفه</label>
+                                        <select name="job_off" class="form-control error" [(ngModel)]="data.job_off">
+                                            <option *ngFor="let item of offArray" value="{{item.office_name}}">
+                                                {{item.office_name}}</option>
+                                        </select>
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.job_off.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <!-- <div class="form-group position-relative">
+                                        <label>قسم الموظف
+                                        </label>
+                                        <select name="dep_name" class="form-control error" [(ngModel)]="data.dep_name">
+                                            <option *ngFor="let item of depArray" value="{{item.dep_name}}">
+                                                {{item.dep_name}}</option>
+                                        </select>
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.dep_name.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <div class="form-group position-relative">
+                        <label>عنوان الموظف</label>
+                        <input type="text" name="emp_address" class="form-control error" [(ngModel)]="data.emp_address">
+                        <!-- <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_address.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div> -->
+                    </div>
+                    <div class="form-group position-relative">
+                        <label>تاريخ ميلاد الموظف</label>
+                        <input type="date" name="emp_birth" class="form-control error" [(ngModel)]="data.emp_birth">
+                        <!-- <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_birth.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div> -->
+                    </div>
+                    <div class="form-group position-relative">
+                        <label>حالة الموظف العسكرية</label>
+                        <input type="text" name="emp_militry" class="form-control error" [(ngModel)]="data.emp_militry">
+                        <!-- <div class="text-danger" *ngIf="isSubmitted && formControls.emp_militry.errors?.required">هذه
+                            الخانة
+                            مطلوبه.
+                        </div> -->
+                    </div>
+                    <!-- <div class="form-group position-relative">
+                                        <label>تاريخ بدء الموظف</label>
+                                        <input type="date" name="emp_start" class="form-control error"
+                                            [(ngModel)]="data.emp_start">
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_start.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <div class="form-group position-relative">
+                        <label>تعليم الموظف</label>
+                        <input type="text" name="emp_edu" class="form-control error" [(ngModel)]="data.emp_edu">
+                        <!-- <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.emp_edu.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div> -->
+                    </div>
+                    <!-- <div class="form-group position-relative">
+                                        <label>نوع موظف</label>
+                                        <select name="role" class="form-control error" [(ngModel)]="data.role">
+                                            <option value="65ce086b-31dd-4e18-8b29-b04047176e25">Admin</option>
+                                            <option value="384aedda-e981-45db-a199-258facf08355">HR User</option>
+                                            <option value="c7941c6c-8920-46bf-964e-e046314021e5">EMP</option>
+                                        </select>
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.role.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <!-- <div class="form-group position-relative">
+                                        <label>صورة الموظف</label>
+                                        <input type="text" name="image" class="form-control error"
+                                            formControlName="image">
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.image.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <!-- <div class="form-group position-relative">
+                                        <label>وثائق الموظف</label>
+                                        <input type="text" name="documents" class="form-control error"
+                                            formControlName="documents">
+                                        <div class="text-danger"
+                                            *ngIf="isSubmitted && formControls.documents.errors?.required">هذه الخانة
+                                            مطلوبه.
+                                        </div>
+                                    </div> -->
+                    <div class="form-group position-relative">
+                        <button type="button" class="btn btn-success mb-1" (click)="onEdit()">تعديل</button>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-right" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="rightModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rightModalLabel">صورة موظف </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="docTemplate" (submit)="docSubmit(docTemplate.value)">
+                    <div class="text-center">
+                        <img [src]="imgSrc" width="250px" height="255px" (click)="docUploader.click()">
+                    </div>
+                    <div class="form-group">
+                        <label>حدد ملف للتحميل</label>
+                        <input type="file" accept="file/*" class="form-control" #docUploader formControlName="docUrl"
+                            (change)="showDoc($event)">
+                        <!-- <div class="text-danger" *ngIf="isSubmitted && formControls.docUrl.errors?.required">هذه
+                            الخانة مطلوبه.
+                        </div> -->
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button type="submit" class="btn btn-success btn-block float-right">حفظ</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-center" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="centerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 600px !important; max-height: 600px !important;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="centerModalLabel">شهادة عسكرية </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="align-self: center;">
+                <iframe width="600" height="600" [src]="data.documents | safe:'resourceUrl'"></iframe>
+            </div>
+            <div class="modal-footer">
+                            </div>
+        </div>
+    </div>
+</div>

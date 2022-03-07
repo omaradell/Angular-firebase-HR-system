@@ -1,0 +1,12 @@
+.btn-outline-white {
+    color       : rgb(133, 133, 133) !important;
+    border-color: rgb(133, 133, 133) !important;
+}
+
+.btn-outline-white:hover {
+    background-color: #001aff;
+}
+
+* {
+    font-family: 'Cairo', sans-serif !important;
+}

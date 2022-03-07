@@ -1,0 +1,189 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>حضور الموظفين</h1>
+            <!-- <div class="mb-2">
+                <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions"
+                    role="button" aria-expanded="true" aria-controls="displayOptions">
+                    Display Options
+                    <i class="simple-icon-arrow-down align-middle"></i>
+                </a>
+                <div class="collapse dont-collapse-sm" id="displayOptions">
+                    <div class="d-block d-md-inline-block">
+                        <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
+                            <input class="form-control" placeholder="Search Table" id="searchDatatable">
+                        </div>
+                    </div>
+                    <div class="float-md-right dropdown-as-select" id="pageCountDatatable">
+                        <span class="text-muted text-small">Displaying 1-10 of 40 items</span>
+                        <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            10
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item active" href="#">10</a>
+                            <a class="dropdown-item" href="#">20</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <input type="text" #searchInput placeholder="بحث فى جميع العناصر" [(ngModel)]="searchText"
+                            class="form-control typeahead" autocomplete="off">
+                        <div class="input-group-append ">
+                            <button type="submit" class="btn btn-primary default">
+                                <i class="simple-icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <label>من تاريخ</label>
+                    <input type="date" name="date" class="form-control " [(ngModel)]="filterddata.date" autocomplete="off">
+                    <!-- <input class="form-control datepicker" name="date" [(ngModel)]="filterddata.date" placeholder="من " autocomplete="off"> -->
+                    <!-- <div class="text-danger"
+                        *ngIf="isSubmitted && formControls.from.errors?.required">هذه الخانة
+                        مطلوبه.
+                    </div> -->
+                </div>
+                <div class="col-sm-3">
+                    <label>إلى تاريخ</label>
+                    <input type="date" name="filter_date" class="form-control " (change)="dateFilter()" [(ngModel)]="filterddata.filter_date" autocomplete="off">
+                    <!-- <input class="form-control datepicker" name="filter_date" [(ngModel)]="filterddata.filter_date "
+                        placeholder="إلى" autocomplete="off"> -->
+                    <!-- <div class="text-danger"
+                        *ngIf="isSubmitted && formControls.to.errors?.required">هذه الخانة
+                        مطلوبه.
+                    </div> -->
+                </div>
+                <button class="btn btn-success col-sm-3" type="submit" style="max-width: fit-content;
+                height: fit-content;
+                margin-top: 31px;
+                margin-right: auto;" (click)="clearFilter()">Clear Filter</button>
+        
+            </div>
+            <div class="separator"></div>
+        </div>
+    </div>
+    <!-- search filter -->
+    <!-- <div class="col-md-2 kt-margin-bottom-10-mobile">
+        <input matInput placeholder="Search user" #searchInput placeholder="بحث فى جميع العناصر" autocomplete="off"
+            [(ngModel)]="searchText">
+    </div>&nbsp; -->
+    
+
+
+
+    <!-- <form [formGroup]="formTemplate" (submit)="filter(formTemplate.value)">
+        <div class="form-group position-relative">
+            <label> اسم الموظف</label>
+            <select name="uid" class="form-control error" formControlName="uid">
+                <option *ngFor="let item of empArray" value="{{item.uid}}">
+                    {{item.emp_name}}</option>
+            </select>
+            <div class="text-danger" *ngIf="isSubmitted && formControls.uid.errors?.required">هذه الخانة
+                مطلوبه.
+            </div>
+        </div> -->
+    <!-- <button class="btn btn-success mb-1" type="submit" (click)="filter(myUID)">click</button> -->
+
+    <!-- </form> -->
+
+    <div class="row">
+        <div class="col-12 mb-4 data-table-rows data-tables-hide-filter">
+            <div id="datatableRows_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                <!-- <div class="row view-filter">
+                    <div class="col-sm-12">
+                        <div class="float-left"></div>
+                        <div class="float-right">
+                            <div id="datatableRows_filter" class="dataTables_filter"><label>Search:<input type="search"
+                                        class="form-control form-control-sm" placeholder=""
+                                        aria-controls="datatableRows"></label></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div> -->
+
+                <table class="data-table responsive dataTable no-footer" data-order="[[ 1, &quot;desc&quot; ]]"
+                    role="grid" style="width: 989px;">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                Name</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                from </th>
+                            <th class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                TO</th>
+                            <th class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                date</th>
+                            <!-- <th class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                خيارات</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr role="row" *ngFor="let item of displayedArray | filter:searchText ; index as i">
+                            <td class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                {{item.EmpName}}</td>
+                            <td class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                {{item.from}}</td>
+                            <td class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                {{item.to}}</td>
+                            <td class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending">
+                                {{item.att_date}}</td>
+                            <!-- <td class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending"><button
+                                    type="button" class="btn btn-outline-danger mb-1"
+                                    (click)="details(item.$key)">تفاصيل</button>
+                            </td>
+                            <td class="sorting" tabindex="0" aria-controls="datatableRows" rowspan="1" colspan="1"
+                                style="width: 321px;" aria-label="Name: activate to sort column ascending"><button
+                                    type="button" class="btn btn-outline-danger mb-1"
+                                    (click)="onDelete(item.$key)">حذف</button>
+                            </td> -->
+
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="row view-pager">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <div class="dataTables_paginate paging_simple_numbers" id="datatableRows_paginate">
+                                <ul class="pagination pagination-sm">
+                                    <li class="paginate_button page-item previous disabled" id="datatableRows_previous">
+                                        <a href="#" aria-controls="datatableRows" data-dt-idx="0" tabindex="0"
+                                            class="page-link prev"><i class="simple-icon-arrow-left"></i></a></li>
+                                    <li class="paginate_button page-item active"><a href="#"
+                                            aria-controls="datatableRows" data-dt-idx="1" tabindex="0"
+                                            class="page-link">1</a></li>
+                                    <li class="paginate_button page-item "><a href="#" aria-controls="datatableRows"
+                                            data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                    <li class="paginate_button page-item "><a href="#" aria-controls="datatableRows"
+                                            data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                    <li class="paginate_button page-item "><a href="#" aria-controls="datatableRows"
+                                            data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                                    <li class="paginate_button page-item next" id="datatableRows_next"><a href="#"
+                                            aria-controls="datatableRows" data-dt-idx="5" tabindex="0"
+                                            class="page-link next"><i class="simple-icon-arrow-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

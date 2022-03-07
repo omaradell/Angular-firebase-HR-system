@@ -1,0 +1,6 @@
+* {
+    font-family: 'Cairo', sans-serif !important;
+}
+.logo{
+    background-image: url('../assets/img/logo.png') !important;
+}

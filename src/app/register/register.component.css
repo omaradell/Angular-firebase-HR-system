@@ -1,0 +1,16 @@
+.dashboard-search {
+    background-size: cover;
+}
+
+.auth-card .form-side {
+    width  : 60%;
+    padding: 80px;
+}
+
+.dashboard-search .form-container {
+    height: 440px !important;
+}
+
+* {
+    font-family: 'Cairo', sans-serif !important;
+}

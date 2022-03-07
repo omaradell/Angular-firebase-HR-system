@@ -1,0 +1,22 @@
+<div class="card dashboard-search">
+    <div class="card-body">
+        <h5 class="text-black mb-3">تسجيل الدخول </h5>
+        <div class="form-container">
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="text" class="form-control" [(ngModel)]="email" name="email" >
+                </div>
+                <div class="form-group">
+                    <label>كلمه السر</label>
+                    <input type="password" class="form-control" [(ngModel)]="password" name="password">
+                </div>
+                <div class="d-flex justify-content-between align-items-center"  >
+                    <!-- <a href="#">Forget password?</a> -->
+                    <a [routerLink]="['/register']" >ليس لديك حساب؟</a>
+
+                    <button class="btn btn-primary btn-lg btn-shadow" href="#" (click)="logIn()">تسجيل الدخول</button>
+                </div>
+
+        </div>
+    </div>
+</div>

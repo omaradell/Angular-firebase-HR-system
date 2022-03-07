@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="text-black mb-3">حضور الموظفين </h5>
+        <div class="form-container">
+
+            <form [formGroup]="formTemplate" (submit)="addAtt(formTemplate.value)">
+                <div class="form-group position-relative">
+                    <label> اسم الموظف</label>
+                    <select name="uid" class="form-control error" formControlName="uid">
+                        <option *ngFor="let item of empArray" value="{{item.uid}}">
+                            {{item.emp_name}}</option>
+                    </select>
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.uid.errors?.required">هذه الخانة
+                        مطلوبه.
+                    </div>
+                </div>
+                <div class="form-group position-relative">
+                    <label>وصول الموظف</label>
+                    <input type="time" name="from" class="form-control error"
+                        formControlName="from">
+                    <!-- <ngb-timepicker name="from" formControlName="from" [meridian]="meridian"></ngb-timepicker> -->
+
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.from.errors?.required">هذه الخانة
+                        مطلوبه.
+                    </div>
+                </div>
+                <div class="form-group position-relative">
+                    <label>مغادرة الموظف</label>
+                    <input type="time" name="to" class="form-control error"
+                        formControlName="to">
+                    <!-- <ngb-timepicker name="to" formControlName="to" [meridian]="meridian"></ngb-timepicker> -->
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.to.errors?.required">هذه الخانة
+                        مطلوبه.
+                    </div>
+                </div>
+                <div class="form-group position-relative">
+                    <label>تاريخ اليوم</label>
+                    <input type="date" name="att_date" class="form-control error" formControlName="att_date">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.att_date.errors?.required">هذه الخانة
+                        مطلوبه.
+                    </div>
+                </div>
+
+                <div class="form-group position-relative">
+                    <button type="submit" class="btn btn-success mb-1">إضافة</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

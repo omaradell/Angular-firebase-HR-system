@@ -1,0 +1,12 @@
+.dashboard-search {
+    background-size: cover;
+    background-image: url('src/assets/img/hr.jpg') !important;
+}
+
+.dashboard-search .form-container {
+    height: 290px !important;
+}
+
+* {
+    font-family: 'Cairo', sans-serif !important;
+}
